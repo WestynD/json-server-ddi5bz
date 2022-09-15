@@ -112,6 +112,7 @@ $('#logForm').on('submit', async (ev) => {
   // Submit handler. Creates object from the form data, submits to the db and then displays the data.
   ev.preventDefault()
   ev.stopPropagation()
+  $('#confirmSound').play()
   const self = this
   let submitDate = new Date().toLocaleString()
   submitDate = submitDate.replace(',', '')

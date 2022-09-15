@@ -66,6 +66,10 @@ class ElementCollection extends Array {
   html(newHTML) {
     this.forEach((e) => (e.innerHTML = newHTML))
   }
+
+  play() {
+    this.forEach((e) => e.play())
+  }
 }
 
 function $(param) {

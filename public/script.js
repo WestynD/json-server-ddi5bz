@@ -65,9 +65,9 @@ function addLog(container, log) {
   // Helper function to add a json log to the list of logs on the page
   $('#logDiv').removeClass('hidden')
   let logElem = document.createElement('li')
-  $(logElem).addClass('clickToHide')
+  //$(logElem).addClass('clickToHide')
   $(logElem).html(
-    `<div><small>${log.date}</small></div><pre><p class="break-all w-1/1 inline-block whitespace-pre-line">${log.text}</p></pre><hr class="my-5 border-gray-500">`
+    `<div class="clickToHide"><div><small>${log.date}</small></div><pre><p class="break-all w-1/1 inline-block whitespace-pre-line">${log.text}</p></pre><p class="bg-[#F9842A] readDiv z-10 px-10 w-min color-white" >Read It</p><hr class="my-5 border-gray-500"></div>`
   )
   container[0].appendChild(logElem)
 }
@@ -90,14 +90,19 @@ async function requestLogs() {
     }
     $('.clickToHide').forEach((toggleHide) => {
       $(toggleHide).on('click', (ev) => {
-        let logText = toggleHide.querySelector('p')
-        let timestamp = toggleHide.querySelector('small')
-        if ($(logText).hasClass('hidden')) {
-          $(logText).removeClass('hidden')
-          $(timestamp).removeClass('mt-2')
+        if (ev.target.classList.contains('readDiv')) {
+          let logText = ev.target.previousSibling.firstChild
+          speak(logText.innerText)
         } else {
-          $(logText).addClass('hidden')
-          $(timestamp).addClass('mt-3')
+          let logText = toggleHide.querySelector('p')
+          let timestamp = toggleHide.querySelector('small')
+          if ($(logText).hasClass('hidden')) {
+            $(logText).removeClass('hidden')
+            $(timestamp).removeClass('mt-2')
+          } else {
+            $(logText).addClass('hidden')
+            $(timestamp).addClass('mt-3')
+          }
         }
       })
     })
@@ -137,6 +142,19 @@ function createUUID() {
       v = c == 'x' ? r : (r & 0x3) | 0x8
     return v.toString(16)
   })
+}
+
+function speak(text) {
+  window.speechSynthesis.cancel()
+  if ('speechSynthesis' in window) {
+    // Speech Synthesis supported 🎉
+    var msg = new SpeechSynthesisUtterance()
+    msg.text = text
+    window.speechSynthesis.speak(msg)
+  } else {
+    // Speech Synthesis Not Supported 😣
+    alert("Sorry, your browser doesn't support text to speech!")
+  }
 }
 
 // DONE: Wire up the app's behavior here.

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Student Log</title>
+    <meta charset="utf8" />
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico?" />
+  </head>
+  <body class="border-box">
+    <header class="bg-[#F9842A] p-5 mb-5 text-xl">UVU Logging System</header>
+    <form
+      id="logForm"
+      class="bg-blue-200 flex flex-wrap w-2/3 m-auto p-5 flex-col lg:flex-row"
+    >
+      <div
+        class="
+          flex flex-nowrap flex-col
+          w-full
+          lg:w-1/3
+          border-b-2
+          pb-5
+          lg:pb-0 lg:border-b-0 lg:border-r-2
+          border-gray-500
+          pr-5
+        "
+      >
+        <select
+          aria-label="Select Course"
+          id="course"
+          name="course"
+          data-cy="course_select"
+          class="mb-5 w-130 self-start px-2 py-1"
+        >
+          <option selected value="">Choose Courses</option>
+        </select>
+
+        <div id="idDiv" class="hidden flex flex-col mb-5">
+          <label for="uvuId" class="self-start width-full">UVU ID</label>
+          <input
+            type="text"
+            id="uvuId"
+            name="uvuId"
+            data-cy="uvuId_input"
+            class="w-155 shrink-0 self-start px-2 py-1 my-1"
+            value="10234567"
+            style="width: 155px"
+          />
+          <p id="idWarning" class="hidden text-red-500 mt-1"></p>
+        </div>
+        <div class="flex flex-col mb-5">
+          <label class="">New Log</label>
+          <textarea
+            style="height: 75px"
+            aria-label="add log textarea"
+            data-cy="log_textarea"
+            class="my-1 w-full px-2 py-1"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          id="submitButton"
+          data-cy="add_log_btn"
+          class="
+            bg-green-400
+            p-3
+            disabled:bg-gray-400 disabled:opacity-75
+            hover:bg-green-600
+            active:bg-green-800 active:border-1
+            width:
+            1/2
+            self-start
+          "
+          disabled
+        >
+          Add New Log
+        </button>
+      </div>
+      <br />
+      <div class="flex flex-col w-full lg:w-2/3">
+        <h3 id="uvuIdDisplay" data-cy="uvuIdDisplay" class="pl-10 pb-5">
+          Student Logs for 10234567
+        </h3>
+        <div id="logDiv" class="mx-5 bg-yellow-200 hidden p-5">
+          <ul data-cy="logs"></ul>
+        </div>
+      </div>
+    </form>
+
+    <script src="jQLite.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- ==================================================================== -->
+
+<!-- DONE:  add padding to inputs-->
+<!-- DONE:  add top padding to warning message-->
+<!-- DONE:  fonts? -->
+<!-- DONE:  responsive? -->
+<!-- TODO:  -->
+<!-- TODO:  -->

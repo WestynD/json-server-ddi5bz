@@ -62,7 +62,7 @@ $('#uvuId').on('input', (ev) => {
       warningMsg.removeClass('hidden')
       warningMsg.text('Your id should consist of 8 digits')
       $('#submitButton')[0].disabled = true
-    $('#dictateButton')[0].disabled = true
+      $('#dictateButton')[0].disabled = true
     }
   }
 })
@@ -73,8 +73,8 @@ function addLog(container, log) {
   let logElem = document.createElement('li')
   //$(logElem).addClass('clickToHide')
   $(logElem).html(
-    `<div class="clickToHide"><div><small>${log.date}</small></div><pre><p class="break-all w-1/1 inline-block whitespace-pre-line">${log.text}</p></pre><p class="bg-[#275d38] readDiv z-10 p-3 mt-3 hover:bg-green-700
-    active:bg-green-900 active:border-1 w-fit text-white" >Read It</p><hr class="my-5 border-gray-500"></div>`
+    `<div class="clickToHide"><div><small>${log.date}</small></div><div class="hideDiv"><pre><p class="break-all w-1/1 inline-block whitespace-pre-line">${log.text}</p></pre><p class="bg-[#275d38] readDiv z-10 p-3 mt-3 hover:bg-green-700
+    active:bg-green-900 active:border-1 w-fit text-white" >Read It</p></div><hr class="my-5 border-gray-500"></div>`
   )
   container[0].appendChild(logElem)
 }
@@ -101,7 +101,7 @@ async function requestLogs() {
           let logText = ev.target.previousSibling.firstChild
           speak(logText.innerText)
         } else {
-          let logText = toggleHide.querySelector('p')
+          let logText = toggleHide.querySelector('.hideDiv')
           let timestamp = toggleHide.querySelector('small')
           if ($(logText).hasClass('hidden')) {
             $(logText).removeClass('hidden')

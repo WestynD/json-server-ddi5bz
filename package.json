@@ -9,8 +9,5 @@
   "devDependencies": {
     "json-server": "0.17.0"
   },
-  "dependencies": {
-    "axios": "^0.27.2",
-    "say": "^0.16.0"
-  }
+  "dependencies": {}
 }

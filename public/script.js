@@ -1,4 +1,4 @@
-const SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
+const SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition
 const speech = new SpeechRecognition()
 $(document).ready(selectCourses())
 
@@ -170,7 +170,8 @@ function listen() {
 
 speech.onresult = (event) => {
   console.log('Result Received: ' + event.results[0][0].transcript)
-  $('.logEntry').val(event.results[0][0].transcript)
+  $('#logEntry').text(event.results[0][0].transcript)
+  speech.stop()
 }
 
 // DONE: Wire up the app's behavior here.

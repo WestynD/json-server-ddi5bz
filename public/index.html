@@ -5,14 +5,29 @@
     <meta charset="utf8" />
 
     <link rel="icon" type="image/x-icon" href="favicon.ico?" />
+    <link rel="stylesheet" href="https://use.typekit.net/zij3lol.css">
   </head>
   <body class="border-box">
-    <header class="bg-orange-400 p-5 mb-5 text-xl font-bold">
-      UVU Logging System
-    </header>
+
+  <header class="p-4 shadow-md justify-between flex flex-row font-['Rajdhani'] border-box" >
+  <div id="headerDiv" class="flex">
+    <img src="https://www.uvu.edu/_common/images/uvu-mono.svg" alt="UVU Logo" class="mr-25">
+    <h2 class="text-[#275d38] text-xl ml-4">UTAH VALLEY UNIVERSITY</h2>
+  </div> 
+</header>
+
+<nav id="navBar" class="font-['Rajdhani'] font-md color=[#275d38] mb-4 box-sizing">
+  <ul class="m-auto p-0 list-none flex flex-row">
+    <li class="pl-4 pr-4 pt-2 pb-2">HOME</li>
+    <li class="active bg-[#275d38] text-white pl-4 pr-4 pt-2 pb-2">LOGGING SYSTEM</li>
+    <li class="pl-4 pr-4 pt-2 pb-2">ABOUT US</li>
+    <li class="pl-4 pr-4 pt-2 pb-2">CONTACT US</li>
+  </ul>
+  <hr class="border-2 border-[#275d38]" />
+</nav>
     <form
       id="logForm"
-      class="bg-blue-200 flex flex-wrap w-2/3 max-w-900 m-auto p-5 flex-col lg:flex-row "
+      class="flex flex-wrap w-2/3 max-w-900 m-auto p-5 flex-col lg:flex-row shadow-[0px_0px_10px_rgba(0,0,0,0.3)]"
     >
       <div
         class="
@@ -31,7 +46,7 @@
           id="course"
           name="course"
           data-cy="course_select"
-          class="mb-5 w-130 self-start px-2 py-1"
+          class="mb-5 w-130 self-start px-2 py-1 border border-black"
         >
           <option selected value="">Choose Courses</option>
         </select>
@@ -43,7 +58,7 @@
             id="uvuId"
             name="uvuId"
             data-cy="uvuId_input"
-            class="w-155 shrink-0 self-start px-2 py-1 my-1"
+            class="w-155 shrink-0 self-start px-2 py-1 my-1 border border-black"
             placeholder="10234567"
             style="width: 155px"
           />
@@ -57,7 +72,7 @@
             style="height: 75px"
             aria-label="add log textarea"
             data-cy="log_textarea"
-            class="my-1 w-full px-2 py-1"
+            class="my-1 w-full px-2 py-1 border border-black"
           ></textarea>
         </div>
         <div>
@@ -66,7 +81,8 @@
             id="submitButton"
             data-cy="add_log_btn"
             class="
-              bg-green-400
+              text-white
+              bg-[#275d38]
               p-3
               disabled:bg-gray-400 disabled:opacity-75
               hover:bg-green-600
@@ -84,8 +100,9 @@
             type="button"
             id="dictateButton"
             class="
+              text-white
               dictateButton
-              bg-orange-400
+              bg-[#275d38]
               p-3
               disabled:bg-gray-400 disabled:opacity-75
               hover:bg-orange-600
@@ -109,7 +126,7 @@
         <h3 id="uvuIdDisplay" data-cy="uvuIdDisplay" class="lg:pl-10 pb-5">
           Student Logs for 10234567
         </h3>
-        <div id="logDiv" class="lg:mx-5 bg-yellow-200 hidden p-5">
+        <div id="logDiv" class="lg:mx-5 bg-[#e8e8e8] hidden p-5">
           <ul data-cy="logs"></ul>
         </div>
       </div>

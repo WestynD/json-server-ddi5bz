@@ -1,3 +1,5 @@
+const SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
+const speech = new SpeechRecognition()
 $(document).ready(selectCourses())
 
 async function selectCourses() {
@@ -67,8 +69,8 @@ function addLog(container, log) {
   let logElem = document.createElement('li')
   //$(logElem).addClass('clickToHide')
   $(logElem).html(
-    `<div class="clickToHide"><div><small>${log.date}</small></div><pre><p class="break-all w-1/1 inline-block whitespace-pre-line">${log.text}</p></pre><p class="bg-orange-500 readDiv z-10 p-3 mt-5 hover:bg-orange-600
-    active:bg-orange-800 active:border-1 w-fit text-white" >Read It</p><hr class="my-5 border-gray-500"></div>`
+    `<div class="clickToHide"><div><small>${log.date}</small></div><pre><p class="break-all w-1/1 inline-block whitespace-pre-line">${log.text}</p></pre><p class="bg-orange-400 readDiv z-10 p-3 mt-3 hover:bg-orange-500
+    active:bg-orange-700 active:border-1 w-fit" >Read It</p><hr class="my-5 border-gray-500"></div>`
   )
   container[0].appendChild(logElem)
 }
@@ -156,6 +158,19 @@ function speak(text) {
     // Speech Synthesis Not Supported 😣
     alert("Sorry, your browser doesn't support text to speech!")
   }
+}
+
+$('.dictateButton').on('click', (ev) => {
+  listen()
+})
+
+function listen() {
+  speech.start()
+}
+
+speech.onresult = (event) => {
+  console.log('Result Received: ' + event.results[0][0].transcript)
+  $('.logEntry').val(event.results[0][0].transcript)
 }
 
 // DONE: Wire up the app's behavior here.

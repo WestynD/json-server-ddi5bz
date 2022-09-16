@@ -7,7 +7,9 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico?" />
   </head>
   <body class="border-box">
-    <header class="bg-orange-500 p-5 mb-5 text-xl font-bold text-white">UVU Logging System</header>
+    <header class="bg-orange-400 p-5 mb-5 text-xl font-bold">
+      UVU Logging System
+    </header>
     <form
       id="logForm"
       class="bg-blue-200 flex flex-wrap w-2/3 m-auto p-5 flex-col lg:flex-row"
@@ -47,9 +49,11 @@
           />
           <p id="idWarning" class="hidden text-red-500 mt-1"></p>
         </div>
+
         <div class="flex flex-col mb-5">
           <label class="">New Log</label>
           <textarea
+            id="logEntry"
             style="height: 75px"
             aria-label="add log textarea"
             data-cy="log_textarea"
@@ -73,6 +77,21 @@
           disabled
         >
           Add New Log
+        </button>
+        <button
+          class="
+            dictateButton
+            bg-orange-400
+            p-3
+            disabled:bg-gray-400 disabled:opacity-75
+            hover:bg-orange-600
+            active:bg-orange-800 active:border-1
+            width:
+            1/2
+            self-start
+          "
+        >
+          Dictate Log
         </button>
         <audio id="confirmSound" src="./confirm.wav"></audio>
       </div>

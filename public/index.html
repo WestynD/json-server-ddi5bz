@@ -60,41 +60,47 @@
             class="my-1 w-full px-2 py-1"
           ></textarea>
         </div>
-        <button
-          type="submit"
-          id="submitButton"
-          data-cy="add_log_btn"
-          class="
-            bg-green-400
-            p-3
-            disabled:bg-gray-400 disabled:opacity-75
-            hover:bg-green-600
-            active:bg-green-800 active:border-1
-            width:
-            1/2
-            self-start
-          "
-          disabled
-        >
-          Add New Log
-        </button>
-        <button
-          type="button"
-          class="
-            dictateButton
-            bg-orange-400
-            p-3
-            disabled:bg-gray-400 disabled:opacity-75
-            hover:bg-orange-600
-            active:bg-orange-800 active:border-1
-            width:
-            1/2
-            self-start
-          "
-        >
-          Dictate Log
-        </button>
-        <audio id="confirmSound" src="./confirm.wav"></audio>
+        <div>
+          <button
+            type="submit"
+            id="submitButton"
+            data-cy="add_log_btn"
+            class="
+              bg-green-400
+              p-3
+              disabled:bg-gray-400 disabled:opacity-75
+              hover:bg-green-600
+              active:bg-green-800 active:border-1
+              width:
+              1/2
+              self-start
+            "
+            disabled
+          >
+            Add New Log
+          </button>
+          <button
+            type="button"
+            class="
+              dictateButton
+              bg-orange-400
+              p-3
+              disabled:bg-gray-400 disabled:opacity-75
+              hover:bg-orange-600
+              active:bg-orange-800 active:border-1
+              width:
+              1/2
+              self-start
+            "
+            disabled
+          >
+            Dictate Log
+          </button>
+        </div>
+        <audio
+          id="confirmSound"
+          src="https://stackblitz.com/files/json-server-ue5b9m/github/WestynD/json-server-ddi5bz/main/public/582673__ironcross32__monophonic-twist-04.wav"
+        ></audio>
       </div>
       <br />
       <div class="flex flex-col w-full lg:w-2/3">

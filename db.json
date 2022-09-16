@@ -41,6 +41,20 @@
       "date": "1/10/2022, 7:27:40 PM",
       "text": "Initial jquery practicum works.",
       "id": "LMH7POH"
+    },
+    {
+      "courseId": "cs4660",
+      "uvuId": "10111111",
+      "date": "9/15/2022 6:38:41 PM",
+      "text": "testing testing",
+      "id": "bc2a204"
+    },
+    {
+      "courseId": "cs4660",
+      "uvuId": "10111111",
+      "date": "9/15/2022 6:40:27 PM",
+      "text": "testing testing testing",
+      "id": "247252d"
     }
   ],
   "courses": [

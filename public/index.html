@@ -12,7 +12,7 @@
     </header>
     <form
       id="logForm"
-      class="bg-blue-200 flex flex-wrap w-2/3 m-auto p-5 flex-col lg:flex-row"
+      class="bg-blue-200 flex flex-wrap w-2/3 max-w-900 m-auto p-5 flex-col lg:flex-row "
     >
       <div
         class="
@@ -71,16 +71,18 @@
               disabled:bg-gray-400 disabled:opacity-75
               hover:bg-green-600
               active:bg-green-800 active:border-1
+              mr-2
               width:
               1/2
               self-start
             "
             disabled
           >
-            Add New Log
+            Add Log
           </button>
           <button
             type="button"
+            id="dictateButton"
             class="
               dictateButton
               bg-orange-400

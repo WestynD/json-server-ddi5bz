@@ -50,6 +50,8 @@ $('#uvuId').on('input', (ev) => {
     } else {
       warningMsg.removeClass('hidden')
       warningMsg.text('Your id can only consist of digits')
+      $('#submitButton')[0].disabled = true
+      $('#dictateButton')[0].disabled = true
     }
   } else {
     let re = /^\d\d\d\d\d\d\d\d$/gm
@@ -59,6 +61,8 @@ $('#uvuId').on('input', (ev) => {
     } else {
       warningMsg.removeClass('hidden')
       warningMsg.text('Your id should consist of 8 digits')
+      $('#submitButton')[0].disabled = true
+    $('#dictateButton')[0].disabled = true
     }
   }
 })
@@ -113,6 +117,7 @@ async function requestLogs() {
       `Student Logs for ${document.getElementById('uvuId').value}`
     )
     $('#submitButton')[0].disabled = false
+    $('#dictateButton')[0].disabled = false
   }
 }
 
@@ -169,8 +174,9 @@ function listen() {
 }
 
 speech.onresult = (event) => {
-  console.log('Result Received: ' + event.results[0][0].transcript)
-  $('#logEntry').text(event.results[0][0].transcript)
+  let result = event.results[0][0].transcript
+  result = result.charAt(0).toUpperCase() + result.slice(1)
+  $('#logEntry').text(result)
   speech.stop()
 }
 

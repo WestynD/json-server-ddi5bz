@@ -67,7 +67,8 @@ function addLog(container, log) {
   let logElem = document.createElement('li')
   //$(logElem).addClass('clickToHide')
   $(logElem).html(
-    `<div class="clickToHide"><div><small>${log.date}</small></div><pre><p class="break-all w-1/1 inline-block whitespace-pre-line">${log.text}</p></pre><p class="bg-[#F9842A] readDiv z-10 px-10 w-min color-white" >Read It</p><hr class="my-5 border-gray-500"></div>`
+    `<div class="clickToHide"><div><small>${log.date}</small></div><pre><p class="break-all w-1/1 inline-block whitespace-pre-line">${log.text}</p></pre><p class="bg-orange-500 readDiv z-10 p-3 mt-5 hover:bg-orange-600
+    active:bg-orange-800 active:border-1 w-fit text-white" >Read It</p><hr class="my-5 border-gray-500"></div>`
   )
   container[0].appendChild(logElem)
 }

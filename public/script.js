@@ -17,11 +17,9 @@ async function selectCourses() {
 
 async function requestCourses() {
   // Request courses from DB
-  const response = await axios.get(
-    'https://json-server-1ugqwq--3000.local.webcontainer.io/api/v1/courses'
-  )
+  const response = await axios.get('http://localhost:3000/api/v1/courses')
   return response.data
-}
+} //'https://json-server-1ugqwq--3000.local.webcontainer.io/api/v1/courses'
 
 $('#course').on('change', (ev) => {
   // Shows the uvuId text entry if a course is selected and hides it if none is selected.
@@ -81,9 +79,10 @@ function addLog(container, log) {
 
 async function requestLogs() {
   // Requests the log data from the server
-  var requestUrl = `https://json-server-1ugqwq--3000.local.webcontainer.io/logs?courseId=${$(
+  var requestUrl = `http://localhost:3000/logs?courseId=${$(
     '#course'
   ).val()}&uvuId=${$('#uvuId').val()}`
+  //`https://json-server-1ugqwq--3000.local.webcontainer.io/logs?courseId=${$(
   const requestedLogs = await axios.get(requestUrl)
   let retrievedLogs = requestedLogs.data
   let logList = $('#logDiv > ul')
@@ -137,7 +136,7 @@ $('#logForm').on('submit', async (ev) => {
     id: createUUID(),
   }
   await axios
-    .post('https://json-server-1ugqwq--3000.local.webcontainer.io/logs', newLog)
+    .post('http://localhost:3000/logs', newLog)
     .then(function (response) {
       console.log(response), self.requestLogs()
     })

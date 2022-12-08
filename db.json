@@ -55,6 +55,20 @@
       "date": "11/9/2022 2:49:23 PM",
       "text": "test",
       "id": "4d5984a"
+    },
+    {
+      "courseId": "cs4660",
+      "uvuId": "10111111",
+      "date": "12/7/2022 3:19:34 PM",
+      "text": "Test",
+      "id": "5f918e3"
+    },
+    {
+      "courseId": "cs4660",
+      "uvuId": "10111111",
+      "date": "12/7/2022 7:17:11 PM",
+      "text": "This is a test log",
+      "id": "14ef355"
     }
   ],
   "courses": [
